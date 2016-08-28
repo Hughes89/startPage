@@ -8,6 +8,7 @@ a {
 }
 
 div.container {
+  align-self: center;
     height: 10em;
     position: relative
     margin: 0;
@@ -43,16 +44,6 @@ div.container {
   font-size: 40px;
 }
 
-input[type="submit"] {
-  background: #61a0a0;
-  font-family: 'Titillium Web', sans-serif;
-  color: #dceaea;
-  outline: none;
-  display: block;
-  border: 1px;
-  border-color: #86b6b6;
-  padding: 2px;
-}
 
 input[type="text"] {
   box-sizing: content-box;
