@@ -1,0 +1,75 @@
+body {
+  background-color: #dceaea;
+  color: #61a0a0;
+}
+
+a {
+  color: currentColor;
+}
+
+div.container {
+    height: 10em;
+    position: relative
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
+
+
+.clock {
+  text-align: center;
+  font-size: 200px;
+  font-family: 'Titillium Web', sans-serif;
+  line-height: 150px;
+}
+
+.amPM {
+  font-size: 60px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.date {
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 30px;
+}
+
+
+.favorites {
+  text-align: center;
+  font-size: 40px;
+}
+
+input[type="submit"] {
+  background: #61a0a0;
+  font-family: 'Titillium Web', sans-serif;
+  color: #dceaea;
+  outline: none;
+  display: block;
+  border: 1px;
+  border-color: #86b6b6;
+  padding: 2px;
+}
+
+input[type="text"] {
+  box-sizing: content-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  display: block;
+  padding: 7px;
+  border: 1px;
+  border-style: solid;
+  border-color: #86b6b6;
+  background: #61a0a0;
+  margin-bottom: 10px;
+  font: 18px 'Titillium Web', sans-serif;
+  color: #dceaea;
+  height: 45px;
+}
+::-webkit-input-placeholder {
+   color: #86b6b6;
+}
