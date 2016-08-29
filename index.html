@@ -31,11 +31,15 @@
         var h = today.getHours();
         var m = today.getMinutes();
         var s = today.getSeconds();
+        var h2 = today.getHours();
         h = ((h >12) ? h - 12 : h);
+         if (h === 00) {
+           h = 12;
+         }
         h = checkTime(h);
         m = checkTime(m);
         s = checkTime(s);
-        var amPM = (h >= 12) ? " A.M." : " P.M.";
+        var amPM = (h2 <= 12) ? " A.M." : " P.M.";
         $('.clock').html(h + ':' + m + '<span class="amPM">' + ' ' +amPM  + '</span>')
         var t = setTimeout(getMyTime,500);
       }
@@ -79,6 +83,18 @@
 
 
     $('.favorites').append('<a href="https://github.com/"><i class="fa fa-github" aria-hidden="true"></i></a>&nbsp;&nbsp;<a href="http://www.gmail.com/"><i class="fa fa-envelope" aria-hidden="true"></i></a>&nbsp;&nbsp;<a href="https://www.reddit.com/"><i class="fa fa-reddit" aria-hidden="true"></i></a>&nbsp;&nbsp;<a href="http://www.facebook.com/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>&nbsp;&nbsp;<a href="http://www.youtube.com/"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>&nbsp;&nbsp<a href="http://www.repl.it/"><i class="fa fa-file-text" aria-hidden="true"></i></a>')
+
+  var weath = "http://api.openweathermap.org/data/2.5/forecast/weather?q=Philadelphia1&APPID=1a6eb803c18b83cea07c74c272dc7fc7"
+
+  $.getJSON(weath, function (data) {
+    var weatherDesc = data.list[0].weather[0].description.split('');
+    weatherDesc[0] = weatherDesc[0].toUpperCase();
+    weatherDesc = weatherDesc.join('')
+    var temp = Math.round(data.list[0].main.temp * 9/5 - 459.67);
+    $('.date').append('<span class="weather"><br />Todays weather: ' + temp + '&#8457;' + ' - Forecast: ' + weatherDesc + '</span>')
+  })
+
+
     })
     </script>
   </body>
